@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="serverTitle">ぷらいすれす！サーバーボード  </title>
+    <script src="./scripts/guild.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <style>
+        .hide { display: none;}
+        .tenten {
+            color : #6f6f6f
+        }
+        code {
+            font-size : 1.25rem
+        }
+        .tag:not(body){
+            font-size: 1em;
+        }
+        .content {
+            font-size: 1.5em;
+            background-color: #0000000f;
+            color : #000;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .main {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            height: 250px;
+        }
+        .center {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="hidedisplay" id="guilds"></div>
+        <div class="loader"></div>
+        <div class="container">
+            <div class="ServerNames has-text-centered">
+                <h1 class="title is-1" id="t"></h1>
+                <p class="subtitle tenten" id="id"></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <br>
+            <div class="ServerTags has-text-centered" id="tags">
+            </div>
+            <code id="lastUpdate"></code>
+        </div>
+        <hr>
+        <div class="container main has-text-centered">
+
+            <a class="button center is-info" id="invite">
+                サーバーに参加する
+            </a>
+            <br>
+            <div class="content" id="content">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

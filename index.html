@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServerBoard Beta public</title>
+    <script src="./scripts/index.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <style> 
+    html { background-color: #fff;}; 
+    .box { background-color: #fff;}
+    .hide{ display: none }
+    #guilds {
+        display : grid;
+        grid-template-columns:auto auto auto;
+        grid-template-rows:1fr 1fr;
+        gap:10px
+    }
+    .tenten {
+        color : #6f6f6f
+    }
+    @media only screen and (max-width:1024px){
+      #guilds {
+          display : grid;
+          grid-template-columns:auto;
+          grid-template-rows:1;
+          gap:10px
+      }
+    }
+    .title {
+        background-color : #00000021
+    }
+    </style>
+    <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" ></script>
+</head>
+<body>
+  <div class="section">
+    <div class="container is-fullhd">
+      <div class="loadingDisplay has-text-centered is-size-3">
+        <div class="loader">
+        </div>
+        <div id="loaderInfomation"></div>
+        <div class="loadInfomation is-size-5">
+            <h1 style="color: #000;">サーバーを呼び出し中です。0.5秒待ってください...。</h1>
+        </div>
+      </div>
+        <div id="guilds">
+        </div>
+    </div>
+  </div>
+</body>
+</html>
