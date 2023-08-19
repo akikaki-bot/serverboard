@@ -30,14 +30,13 @@ ServerBoard.prototype.init = async () => {
     if(typeof guild.infomations.lastUpdated === "undefined") IsNotDate = true
     const date = new Date(guild.infomations.lastUpdated)
 
-    console.log(guild)
     document.getElementsByClassName('loader').item(0).setAttribute('class', "hide")
 
     document.getElementById('serverTitle').innerText += " / "+guild.name
     document.getElementById('t').innerText = guild.name
     document.getElementById('id').innerText = guild.guildId
-    document.getElementById('tags').innerHTML = `${guild.infomations.tags.map(v => `<a class="tag" href="./search.html?tags=${v}">${v}</a>`).join(' ')}`
-    document.getElementById('lastUpdate').innerText = `${IsNotDate ? "最終更新 : 不明" : "最終更新 "+date.getMonth()+"/"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()}`
+    document.getElementById('tags').innerHTML = `${guild.infomations.tags.map(v => `<a class="tag" href="./search.html?tag=${v}">${v}</a>`).join(' ')}`
+    document.getElementById('lastUpdate').innerText = `${IsNotDate ? "最終更新 : 不明" : "最終更新 "+date.getMonth()+"/"+date.getDate()+" "+date.getHours()+":"+(date.getMinutes() < 10 ? "0"+date.getMinutes() : date.getMinutes())}`
     document.getElementById('content').innerText = guild.infomations.description_markdown
     document.getElementById('invite').setAttribute('href',`https://discord.gg/${guild.inviteCode}`)
     /*

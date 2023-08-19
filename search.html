@@ -2,17 +2,55 @@
 
 <script>
     window.onload = () => {
-        setTimeout(() => {
-            location.href = "./index.html"
-        },1000)
+
     }
 </script>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./scripts/search.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+        <style> 
+        html { background-color: #fff;}; 
+        .box { background-color: #fff;}
+        .hide{ display: none }
+        #guilds {
+            display : grid;
+            grid-template-columns:auto auto auto;
+            grid-template-rows:1fr 1fr;
+            gap:10px
+        }
+        .tenten {
+            color : #6f6f6f
+        }
+        @media only screen and (max-width:1024px){
+          #guilds {
+              display : grid;
+              grid-template-columns:auto;
+              grid-template-rows:1;
+              gap:10px
+          }
+        }
+        #searchQuery {
+            background-color : #00000021
+        }
+        </style>
+        <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" ></script>
     </head>
     <body>
-        <h1> まだ実装中なんです、、、 </h1>
+        <div class="section">
+            <div class="container is-fullhd">
+                <h1 class="title"> 
+                    <span id="searchQuery"></span> 
+                    のタグがついているサーバー 
+                </h1>
+                <a href="./index.html?pushedAt=search"> 一覧に戻る </a>
+
+                <hr>
+                <div id="guilds">
+                </div>
+            </div>
+        </div>
     </body>
 </html>
