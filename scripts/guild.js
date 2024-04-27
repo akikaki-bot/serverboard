@@ -17,7 +17,7 @@ ServerBoard.prototype.init = async () => {
          }, 1000)
          return;
     }
-    const guild = await (await fetch(`https://api--projectkeew.repl.co/v1/guilds/${guildId}`)).json()
+    const guild = await (await fetch(`https://pserver-back.aknet.tech/v1/guilds/${guildId}`)).json()
     if(typeof guild.notfound !== "undefined") {
          document.getElementById('guilds').innerHTML = `<h1 class="title is-1"> 404 Not Found </h1>`
          document.getElementsByClassName('section').item(0).setAttribute('class', "hide")

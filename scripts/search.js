@@ -10,11 +10,11 @@ Search.prototype.init = async () => {
     const Query = new URLSearchParams(window.location.search).get(`tag`) 
     document.getElementById('searchQuery').innerText = Query
 
-    const Servers = await (await fetch(`https://api--projectkeew.repl.co/v1/guilds`)).json()
+    const Servers = await (await fetch(`https://pserver-back.aknet.tech/v1/guilds`)).json()
     
     new Search().debugText(`[Debug] : ${Query} in ${Servers.guilds.join(',')} fetching...`)
     Servers.guilds.map(v => {
-        fetch(`https://api--projectkeew.repl.co/v1/guilds/${v}`).then(res => res.ok ? res.json() : void 0)
+        fetch(`https://pserver-back.aknet.tech/v1/guilds/${v}`).then(res => res.ok ? res.json() : void 0)
         .then(detailServer => {
            const Filter = detailServer.infomations.tags.filter(v => v === Query)
            if(Filter.length === 0) return;
